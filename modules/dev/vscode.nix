@@ -26,6 +26,7 @@
               "workbench.iconTheme" = "catppuccin-mocha";
               "window.autoDetectColorScheme" = true;
               "editor.fontFamily" = "JetBrainsMono NF";
+              "editor.fontSize" = 16;
               "editor.fontLigatures" = true;
               "editor.inlayHints.enabled" = "offUnlessPressed";
               "nix.enableLanguageServer" = true;
