@@ -49,6 +49,7 @@
           };
           settings = {
             theme = lib.mkForce themeTransparent;
+            editor.lsp.display-inlay-hints = true;
           };
         };
 
