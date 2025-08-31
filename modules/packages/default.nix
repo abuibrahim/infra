@@ -10,6 +10,7 @@
         nixd
         nixfmt-rfc-style
         google-chrome
+        wl-clipboard-rs
       ];
     };
 }
