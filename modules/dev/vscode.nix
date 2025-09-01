@@ -29,6 +29,7 @@
               "editor.fontSize" = 16;
               "editor.fontLigatures" = true;
               "editor.inlayHints.enabled" = "offUnlessPressed";
+              "haskell.manageHLS" = "PATH";
               "nix.enableLanguageServer" = true;
               "nix.serverPath" = "nixd";
               "nix.formatterPath" = "nixfmt";
@@ -46,6 +47,7 @@
               llvm-vs-code-extensions.vscode-clangd
               vadimcn.vscode-lldb
               haskell.haskell
+              justusadam.language-haskell
               rust-lang.rust-analyzer
               jnoortheen.nix-ide
               tamasfe.even-better-toml
