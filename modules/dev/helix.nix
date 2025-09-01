@@ -43,7 +43,15 @@
             {
               name = "haskell";
               auto-format = true;
-              formatter.command = "${pkgs.ormolu}/bin/ormolu";
+              formatter = {
+                command = "${pkgs.ormolu}/bin/ormolu";
+                args = [ "--no-cabal" ];
+              };
+            }
+            {
+              name = "cabal";
+              auto-format = true;
+              formatter.command = "${pkgs.haskellPackages.cabal-gild}/bin/cabal-gild";
             }
           ];
           themes = {
