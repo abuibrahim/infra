@@ -45,7 +45,10 @@
               auto-format = true;
               formatter = {
                 command = "${pkgs.ormolu}/bin/ormolu";
-                args = [ "--no-cabal" ];
+                args = [
+                  "--stdin-input-file"
+                  "%{buffer_name}"
+                ];
               };
             }
             {
