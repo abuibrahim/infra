@@ -40,6 +40,11 @@
               auto-format = true;
               formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
             }
+            {
+              name = "haskell";
+              auto-format = true;
+              formatter.command = "${pkgs.ormolu}/bin/ormolu";
+            }
           ];
           themes = {
             ${themeTransparent} = {
