@@ -7,6 +7,7 @@
         ripgrep
         lsd
         fd
+        procs
         nixd
         nixfmt-rfc-style
         google-chrome
