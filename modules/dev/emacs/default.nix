@@ -18,6 +18,7 @@
             catppuccin-theme
             ligature
             rust-mode
+            haskell-mode
             lua-mode
             treesit-grammars.with-all-grammars
           ];
