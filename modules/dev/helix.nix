@@ -65,7 +65,16 @@
           };
           settings = {
             theme = lib.mkForce themeTransparent;
-            editor.lsp.display-inlay-hints = true;
+            editor = {
+              lsp.display-inlay-hints = true;
+              color-modes = true;
+              bufferline = "multiple";
+              cursor-shape = {
+                insert = "bar";
+                normal = "block";
+                select = "underline";
+              };
+            };
           };
         };
 
