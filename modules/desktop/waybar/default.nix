@@ -9,10 +9,8 @@
           {
             layer = "top";
             position = "top";
-            exclusive = true;
-            margin-top = 10;
-            margin-left = 10;
-            margin-right = 10;
+            spacing = 0;
+            height = 26;
 
             modules-left = [
               "niri/workspaces"
@@ -20,44 +18,29 @@
 
             modules-center = [
               "clock"
-              "idle_inhibitor"
             ];
 
             modules-right = [
+              "group/tray-expander"
               "niri/language"
+              "bluetooth"
               "network"
               "pulseaudio"
-              "bluetooth"
+              "cpu"
               "battery"
-              "custom/lock"
-              "custom/quit"
             ];
 
             "cpu" = {
               interval = 5;
-              format = " {usage:2}%";
-              tooltip = true;
-            };
-
-            "memory" = {
-              interval = 5;
-              format = " {}%";
-              tooltip = true;
+              format = "";
+              on-click = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.bottom}/bin/btm";
             };
 
             "clock" = {
-              format = "{:L%H:%M}";
-              format-alt = "{:%Y-%m-%d}";
+              format = "{:%A %H:%M}";
+              format-alt = "{:%d %B W%V %Y}";
               tooltip = true;
               tooltip-format = "{calendar}";
-            };
-
-            "idle_inhibitor" = {
-              format = "{icon}";
-              format-icons = {
-                activated = "";
-                deactivated = "";
-              };
             };
 
             "network" = {
@@ -70,77 +53,84 @@
               ];
               format-ethernet = "󰈀";
               format-wifi = "{icon}";
-              format-disconnected = "󰤭";
+              format-disconnected = "󰖪";
               tooltip = true;
-              tooltip-format-wifi = "{essid} ({signalStrength}%)";
-              tooltip-format-ethernet = "{ifname}";
+              tooltip-format-wifi = "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
+              tooltip-format-ethernet = "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
               tooltip-format-disconnected = "Disconnected";
+              interval = 3;
+              spacing = 1;
+              on-click = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.impala}/bin/impala";
+            };
+
+            "battery" = {
+              format = "{capacity}% {icon}";
+              format-discharing = "{icon}";
+              format-charging = "󰂄";
+              format-plugged = "";
+              format-icons = {
+                charging = [
+                  "󰢜"
+                  "󰂆"
+                  "󰂇"
+                  "󰂈"
+                  "󰢝"
+                  "󰂉"
+                  "󰢞"
+                  "󰂊"
+                  "󰂋"
+                  "󰂅"
+                ];
+                default = [
+                  "󰁺"
+                  "󰁻"
+                  "󰁼"
+                  "󰁽"
+                  "󰁾"
+                  "󰁿"
+                  "󰂀"
+                  "󰂁"
+                  "󰂂"
+                  "󰁹"
+                ];
+              };
+              format-full = "󰂅";
+              on-click = "";
+              tooltip-format-discharging = "{power:>1.0f}W↓ {capacity}%";
+              tooltip-format-charging = "{power:>1.0f}W↑ {capacity}%";
+              interval = 5;
+              states = {
+                warning = 20;
+                critical = 10;
+              };
             };
 
             "bluetooth" = {
-              format-on = "󰂯";
-              format-off = "󰂲";
+              format = "󰂯";
+              format-disabled = "󰂲";
               format-connected = "󰂱";
-              tooltip = true;
-              tooltip-format-on = "{controller_address}";
-              tooltip-format-off = "{status}";
-              tooltip-format-connected = "{device_enumerate}";
-              tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-              on-click = "${pkgs.bluez}/bin/bluetoothctl power on";
-              on-click-right = "${pkgs.bluez}/bin/bluetoothctl power off";
+              tooltip-format = "Devices connected: {num_connections}";
+              on-click = "${pkgs.blueberry}/bin/blueberry";
             };
 
             "pulseaudio" = {
-              format = "{icon} {format_source}";
-              format-bluetooth = "󰂰";
-              format-bluetooth-muted = "󰂲";
-              format-muted = "󰝟 {format_source}";
-              format-source = "";
-              format-source-muted = "";
+              format = "{icon}";
+              format-muted = "󰝟";
               format-icons = {
-                headphone = "";
-                hands-free = "";
-                headset = "";
-                phone = "";
-                phone-muted = "";
-                portable = "";
-                car = "";
                 default = [
                   ""
                   ""
                   ""
                 ];
               };
-              on-click = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-              on-click-right = "${pkgs.wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
-            };
-
-            "battery" = {
-              states = {
-                warning = 30;
-                critical = 15;
-              };
-              format = "{icon}";
-              format-charging = "󰂄";
-              format-plugged = "󱘖";
-              format-icons = [
-                "󰁺"
-                "󰁻"
-                "󰁼"
-                "󰁽"
-                "󰁾"
-                "󰁿"
-                "󰂀"
-                "󰂁"
-                "󰂂"
-                "󰁹"
-              ];
-              on-click = "";
-              tooltip = true;
+              tooltip-format = "Playing at {volume}%";
+              scroll-step = 5;
+              on-click = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.wiremix}/bin/wiremix";
+              on-click-right = "${pkgs.pamixer}/bin/pamixer -t";
             };
 
             "niri/language" = {
-              format = "{short} {variant}";
+              format = "{variant}";
             };
 
             "niri/workspaces" = {
@@ -151,16 +141,26 @@
               };
             };
 
-            "custom/lock" = {
-              format = "";
-              on-click = "${pkgs.swaylock-effects}/bin/swaylock -f";
+            "group/tray-expander" = {
+              orientation = "inherit";
+              drawer = {
+                transition-duration = 600;
+                children-class = "tray-group-item";
+              };
+              modules = [
+                "custom/expand-icon"
+                "tray"
+              ];
+            };
+
+            "custom/expand-icon" = {
+              format = " ";
               tooltip = false;
             };
 
-            "custom/quit" = {
-              format = "";
-              on-click = "niri msg action quit";
-              tooltip = false;
+            "tray" = {
+              icon-size = 12;
+              spacing = 12;
             };
           }
         ];
