@@ -7,5 +7,9 @@
         theme = "default";
       };
     };
+    systemd.user.services.walker.Unit.ConditionEnvironment = [
+      "WAYLAND_DISPLAY"
+      "!XDG_CURRENT_DESKTOP=GNOME"
+    ];
   };
 }
