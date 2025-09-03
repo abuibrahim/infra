@@ -3,7 +3,7 @@ input {
     xkb {
       layout "us,us"
       variant ",dvorak"
-      options "grp:win_space_toggle"
+      options "grp:alt_shift_toggle"
     }
     numlock
   }
@@ -79,11 +79,11 @@ binds {
   Mod+Shift+Slash {
     show-hotkey-overlay
   }
-  Mod+T hotkey-overlay-title="Open a Terminal: ghostty" {
+  Mod+Return hotkey-overlay-title="Open Terminal: ghostty" {
     spawn "ghostty"
   }
-  Mod+D hotkey-overlay-title="Run an Application: fuzzel" {
-    spawn "fuzzel"
+  Mod+Space hotkey-overlay-title="Run an Application: walker" {
+    spawn "walker"
   }
   Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" {
     spawn "swaylock"
