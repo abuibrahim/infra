@@ -5,7 +5,6 @@
       home.packages = with pkgs; [
         mosh
         ripgrep
-        lsd
         fd
         procs
         nixd
