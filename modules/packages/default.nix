@@ -4,7 +4,6 @@
     {
       home.packages = with pkgs; [
         mosh
-        fd
         procs
         nixd
         nixfmt-rfc-style
