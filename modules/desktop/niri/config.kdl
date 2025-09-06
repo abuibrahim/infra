@@ -88,6 +88,12 @@ binds {
   Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" {
     spawn "swaylock"
   }
+  Super+Alt+N hotkey-overlay-title="Next wallpaper: wpaperctl" {
+    spawn "wpaperctl" "next"
+  }
+  Super+Alt+P hotkey-overlay-title="Previous wallpaper: wpaperctl" {
+    spawn "wpaperctl" "previous"
+  }
   XF86AudioRaiseVolume allow-when-locked=true {
     spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"
   }
