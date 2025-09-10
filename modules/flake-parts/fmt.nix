@@ -18,8 +18,8 @@
           kdlfmt.enable = true;
         };
         settings = {
-          on-unmatched = "fatal";
           global.excludes = [
+            "*.el"
             "*.envrc"
             ".editorconfig"
             "*/.gitignore"
