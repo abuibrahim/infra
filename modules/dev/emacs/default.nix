@@ -21,6 +21,8 @@
             haskell-mode
             lua-mode
             treesit-grammars.with-all-grammars
+            mu4e
+            mu4easy
           ];
       };
 

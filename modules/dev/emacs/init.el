@@ -60,6 +60,21 @@
           ([f2] . eglot-rename))
   :hook (prog-mode . eglot-ensure))
 
+(use-package mu4easy
+  :config (mu4easy-mode)
+  :custom
+  (mu4easy-contexts '((mu4easy-context
+                        :c-name "Google"
+                        :maildir "Gmail"
+                        :mail "ruslan@babayev.com"
+                        :smtp "smtp.gmail.com"
+                        :sent-action "delete")
+                       (mu4easy-context
+                         :c-name "Apple"
+                         :maildir "Apple"
+                         :mail "abdurrahman@hussain.house"
+                         :smtp "smtp.mail.me.com"))))
+
 (use-package ligature
   :config
   ;; Enable the "www" ligature in every possible major mode
