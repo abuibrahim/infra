@@ -33,15 +33,20 @@
         nix.settings.trusted-users = [ config.flake.meta.users.abdurrahman.username ];
       };
 
-    modules.darwin.abdurrahman = {
-      users.knownUsers = [
-        config.flake.meta.users.abdurrahman.username
-      ];
-      users.users.abdurrahman = {
-        uid = 502;
-        name = "abdurrahman";
-        home = "/Users/abdurrahman";
+    modules.darwin.abdurrahman =
+      { pkgs, ... }:
+      {
+        programs.fish.enable = true;
+
+        users.knownUsers = [
+          "abdurrahman"
+        ];
+        users.users.abdurrahman = {
+          uid = 501;
+          name = "abdurrahman";
+          home = "/Users/abdurrahman";
+          shell = pkgs.fish;
+        };
       };
-    };
   };
 }

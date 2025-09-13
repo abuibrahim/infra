@@ -1,6 +1,14 @@
 { self, config, ... }:
 {
-  flake.modules.darwin."hosts/agdam" = {
+  flake.modules.darwin."host/shusha" = {
+    # Let Determinate Systems manage nix
+    nix.enable = false;
+
+    nixpkgs.hostPlatform = "aarch64-darwin";
+
+    # Enable sudo login with Touch ID
+    security.pam.services.sudo_local.touchIdAuth = true;
+
     system = {
       primaryUser = config.flake.meta.users.abdurrahman.username;
 
@@ -12,17 +20,9 @@
       defaults = {
         dock = {
           autohide = true;
-          orientation = "left";
           show-recents = false;
           showhidden = true;
           static-only = false;
-          persistent-apps = [
-            "/Applications/Google Chrome.app"
-            "/Applications/Ghostty.app"
-            "/System/Applications/Mail.app"
-            "/System/Applications/Calendar.app"
-            "/System/Applications/System Settings.app"
-          ];
         };
 
         finder = {

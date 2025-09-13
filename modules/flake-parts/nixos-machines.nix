@@ -5,7 +5,7 @@
   ...
 }:
 let
-  prefix = "hosts/";
+  prefix = "host/";
   collectHostModules = modules: lib.filterAttrs (name: _: lib.hasPrefix prefix name) modules;
 in
 {

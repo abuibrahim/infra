@@ -7,7 +7,7 @@ let
   };
 in
 {
-  flake.modules.homeManager.shell = {
+  flake.modules.homeManager.email = {
     programs.mbsync.enable = true;
 
     accounts.email.accounts.Apple.mbsync = {

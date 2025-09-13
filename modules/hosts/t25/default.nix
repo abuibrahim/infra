@@ -3,7 +3,7 @@
   ...
 }:
 {
-  flake.modules.nixos."hosts/t25".imports =
+  flake.modules.nixos."host/t25".imports =
     with config.flake.modules.nixos;
     [
       # Modules
@@ -22,10 +22,11 @@
       {
         home-manager.users.abdurrahman.imports = with config.flake.modules.homeManager; [
           base
-          accounts
           desktop
           dev
+          email
           facter
+          fonts
           shell
         ];
       }

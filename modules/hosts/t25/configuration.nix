@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."hosts/t25" = {
+  flake.modules.nixos."host/t25" = {
     # Enable SSH
     services.openssh.enable = true;
 

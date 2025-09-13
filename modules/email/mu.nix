@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.shell = {
+  flake.modules.homeManager.email = {
     programs.mu.enable = true;
 
     accounts.email.accounts.Apple.mu.enable = true;

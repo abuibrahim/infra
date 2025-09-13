@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules.nixos."hosts/t25" =
+  flake.modules.nixos."host/t25" =
     { pkgs, lib, ... }:
     {
       imports = [ inputs.lanzaboote.nixosModules.lanzaboote ];

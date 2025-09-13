@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.accounts =
+  flake.modules.homeManager.email =
     { pkgs, ... }:
     let
       address = "abdurrahman@hussain.house";
