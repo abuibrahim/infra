@@ -5,8 +5,13 @@
       services.wpaperd = {
         enable = true;
         settings = {
-          any = {
+          default = {
             path = "~/Pictures/Wallpapers";
+            transition = {
+              bounce = {
+                bounces = 1.0;
+              };
+            };
           };
         };
       };
