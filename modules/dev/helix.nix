@@ -1,7 +1,6 @@
 {
   flake.modules.homeManager.dev =
     {
-      config,
       pkgs,
       lib,
       ...
@@ -9,7 +8,7 @@
     {
       programs.helix =
         let
-          theme = "catppuccin-${config.catppuccin.flavor}";
+          theme = "catppuccin-mocha";
           themeTransparent = theme + "-transparent";
         in
         {
@@ -17,7 +16,6 @@
           defaultEditor = true;
           extraPackages = with pkgs; [
             marksman
-            wl-clipboard-rs
           ];
           languages.language = [
             {
@@ -77,7 +75,5 @@
             };
           };
         };
-
-      catppuccin.helix.useItalics = true;
     };
 }

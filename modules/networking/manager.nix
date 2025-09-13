@@ -12,11 +12,5 @@
         networkmanager.wifi.backend = "iwd";
       };
     };
-
-    homeManager.base =
-      { pkgs, ... }:
-      {
-        home.packages = [ pkgs.impala ];
-      };
   };
 }

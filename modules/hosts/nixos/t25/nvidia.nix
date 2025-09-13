@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."hosts/t25" = {
+  flake.modules.nixos."nixos/t25" = {
     hardware.graphics.enable = true;
     hardware.nvidia = {
       modesetting.enable = true;

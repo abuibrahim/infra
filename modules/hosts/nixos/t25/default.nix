@@ -3,7 +3,7 @@
   ...
 }:
 {
-  flake.modules.nixos."hosts/t25".imports =
+  flake.modules.nixos."nixos/t25".imports =
     with config.flake.modules.nixos;
     [
       # Modules
@@ -24,6 +24,7 @@
           base
           accounts
           desktop
+          fonts
           dev
           facter
           shell
