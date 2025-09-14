@@ -9,6 +9,11 @@
     # Enable sudo login with Touch ID
     security.pam.services.sudo_local.touchIdAuth = true;
 
+    # Required by LLDB
+    environment.variables = {
+      LLDB_DEBUGSERVER_PATH = "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/Resources/debugserver";
+    };
+
     system = {
       primaryUser = config.flake.meta.users.abdurrahman.username;
 
