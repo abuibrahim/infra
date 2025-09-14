@@ -25,7 +25,7 @@
               "niri/language"
               "bluetooth"
               "network"
-              "pulseaudio"
+              "group/pulseaudio"
               "cpu"
               "battery"
             ];
@@ -113,6 +113,18 @@
               on-click = "${pkgs.blueberry}/bin/blueberry";
             };
 
+            "group/pulseaudio" = {
+              orientation = "horizontal";
+              modules = [
+                "pulseaudio"
+                "pulseaudio/slider"
+              ];
+              drawer = {
+                transition-duration = 300;
+                transition-left-to-right = true;
+              };
+            };
+
             "pulseaudio" = {
               format = "{icon}";
               format-muted = "󰝟";
@@ -127,6 +139,11 @@
               scroll-step = 5;
               on-click = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.wiremix}/bin/wiremix";
               on-click-right = "${pkgs.pamixer}/bin/pamixer -t";
+            };
+
+            "pulseaudio/slider" = {
+              min = 0;
+              max = 100;
             };
 
             "niri/language" = {

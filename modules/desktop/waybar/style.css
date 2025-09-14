@@ -41,6 +41,33 @@
   margin: 0 7.5px;
 }
 
+#pulseaudio-slider {
+  border-radius: 16px;
+  min-height: 0px;
+  min-width: 80px;
+  padding: 0px;
+  margin: 8px;
+}
+
+#pulseaudio-slider slider {
+  border: 0px;
+  border-radius: 16px;
+  opacity: 0;
+  margin: 4px;
+  min-height: 0px;
+  min-width: 0px;
+}
+
+#pulseaudio-slider trough {
+  background-color: @text;
+  border-radius: 16px;
+}
+
+#pulseaudio-slider highlight {
+  background-color: @lavender;
+  border-radius: 16px;
+}
+
 #custom-expand-icon {
   margin-right: 7px;
 }
