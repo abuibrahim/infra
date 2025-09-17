@@ -45,6 +45,7 @@
               with pkgs.vscode-extensions;
               [
                 ms-vscode.cmake-tools
+                ms-vscode-remote.remote-ssh
                 ms-python.python
                 llvm-vs-code-extensions.vscode-clangd
                 vadimcn.vscode-lldb
