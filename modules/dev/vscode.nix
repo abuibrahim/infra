@@ -41,20 +41,30 @@
                 "(builtins.getFlake (toString ./.)).nixosConfigurations.${hostConfig.name}.options.home-manager.users.type.getSubOptions []";
             };
 
-            extensions = with pkgs.vscode-extensions; [
-              ms-vscode.cmake-tools
-              ms-python.python
-              llvm-vs-code-extensions.vscode-clangd
-              vadimcn.vscode-lldb
-              haskell.haskell
-              justusadam.language-haskell
-              rust-lang.rust-analyzer
-              jnoortheen.nix-ide
-              tamasfe.even-better-toml
-              zxh404.vscode-proto3
-              github.vscode-pull-request-github
-              github.copilot
-            ];
+            extensions =
+              with pkgs.vscode-extensions;
+              [
+                ms-vscode.cmake-tools
+                ms-python.python
+                llvm-vs-code-extensions.vscode-clangd
+                vadimcn.vscode-lldb
+                haskell.haskell
+                justusadam.language-haskell
+                rust-lang.rust-analyzer
+                jnoortheen.nix-ide
+                tamasfe.even-better-toml
+                zxh404.vscode-proto3
+                github.vscode-pull-request-github
+                github.copilot
+              ]
+              ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+                {
+                  name = "vscode-augment";
+                  publisher = "augment";
+                  version = "0.555.1";
+                  sha256 = "0611c8e7330d9192bfe3a20132f8d56cffb3a025cb96b8a4213cb9dfa7b21c28";
+                }
+              ];
           };
         };
       };
