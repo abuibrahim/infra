@@ -12,6 +12,7 @@ topLevel: {
         extraConfig = {
           init.defaultBranch = "main";
           pull.ff = "only";
+          push.default = "current";
         };
       };
     };
