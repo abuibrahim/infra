@@ -19,7 +19,7 @@
 
       keyboard = {
         enableKeyMapping = true;
-        swapLeftCtrlAndFn = true;
+        remapCapsLockToControl = true;
       };
 
       defaults = {
