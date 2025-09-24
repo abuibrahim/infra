@@ -24,9 +24,9 @@
               "workbench.preferredDarkColorTheme" = "Catppuccin Mocha";
               "workbench.colorTheme" = "Catppuccin Mocha";
               "workbench.iconTheme" = "catppuccin-mocha";
-              "window.autoDetectColorScheme" = true;
+              "window.autoDetectColorScheme" = false;
               "editor.fontFamily" = "JetBrainsMono NF";
-              "editor.fontSize" = 16;
+              "editor.fontSize" = 15;
               "editor.fontLigatures" = true;
               "editor.inlayHints.enabled" = "offUnlessPressed";
               "haskell.manageHLS" = "PATH";
