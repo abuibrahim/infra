@@ -13,7 +13,6 @@
         in
         {
           enable = true;
-          defaultEditor = true;
           extraPackages = with pkgs; [
             marksman
           ];
