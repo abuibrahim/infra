@@ -1,8 +1,5 @@
 {
   flake.modules.homeManager.shell = {
-    programs.starship = {
-      enable = true;
-      enableFishIntegration = true;
-    };
+    programs.starship.enable = true;
   };
 }

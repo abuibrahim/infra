@@ -1,5 +1,5 @@
 {
   flake.modules.homeManager.shell = {
-    programs.zoxide.enable = true;
+    home.shell.enableShellIntegration = true;
   };
 }
