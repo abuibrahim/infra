@@ -18,7 +18,7 @@
         wakatime.enable = false;
         keymaps = [
           {
-            key = "<leader>T";
+            key = "<leader>n";
             action = "<cmd>Neotree toggle<CR>";
             options.desc = "Toggle filetree";
           }
