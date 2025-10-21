@@ -11,7 +11,6 @@
         enable = true;
         defaultEditor = true;
         vimAlias = true;
-        filetrees.enable = true;
         jdtls.enable = false;
         nvim-lint.enable = false;
         lspkind.enable = false;
