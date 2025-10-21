@@ -13,7 +13,6 @@
         vimAlias = true;
         jdtls.enable = false;
         nvim-lint.enable = false;
-        lspkind.enable = false;
         wakatime.enable = false;
         keymaps = [
           {
