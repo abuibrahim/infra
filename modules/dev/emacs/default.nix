@@ -3,7 +3,7 @@
     { pkgs, ... }:
     {
       programs.emacs = {
-        enable = true;
+        enable = false;
         package = pkgs.emacs-pgtk;
         extraConfig = builtins.readFile ./init.el;
         extraPackages =
