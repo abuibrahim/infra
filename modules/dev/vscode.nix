@@ -11,7 +11,7 @@
         nixpkgs.config.allowUnfree = true;
 
         programs.vscode = {
-          enable = true;
+          enable = false;
           mutableExtensionsDir = false;
           profiles.default = {
             enableExtensionUpdateCheck = false;
