@@ -82,6 +82,19 @@
               ctest.enable = true;
             };
           };
+          which-key = {
+            enable = true;
+            settings = {
+              spec = [
+                {
+                  __unkeyed-1 = "<leader>C";
+                  mode = "n";
+                  group = "+CMake";
+                  icon = "";
+                }
+              ];
+            };
+          };
         };
       };
     };
