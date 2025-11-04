@@ -58,6 +58,16 @@
             enable = true;
             settings = {
               cmake_build_directory = "build/\${variant:buildType}";
+              cmake_soft_link_compile_commands = false;
+              cmake_compile_commands_from_lsp = true;
+              cmake_dap_configuration = {
+                name = "cpp";
+                type = "lldb";
+                request = "launch";
+                stopOnEntry = false;
+                runInTerminal = true;
+                console = "integratedTerminal";
+              };
             };
           };
           dap-lldb = {
