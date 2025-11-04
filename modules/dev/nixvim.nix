@@ -76,6 +76,12 @@
               codelldb_path = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
             };
           };
+          neotest = {
+            enable = true;
+            adapters = {
+              ctest.enable = true;
+            };
+          };
         };
       };
     };
