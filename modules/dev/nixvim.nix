@@ -42,6 +42,7 @@
           }
         ];
         opts = {
+          list = pkgs.lib.mkForce false;
           colorcolumn = pkgs.lib.mkForce "";
           guicursor = pkgs.lib.mkForce [
             "n-v-c:block" # Normal, Visual and Command mode
