@@ -24,7 +24,8 @@ in
         name = lib.removePrefix prefix name;
         value = inputs.nix-darwin.lib.darwinSystem {
           inherit specialArgs;
-          modules = module.imports ++ [
+          modules = [
+            module
             inputs.home-manager.darwinModules.home-manager
             {
               home-manager.extraSpecialArgs = specialArgs;
