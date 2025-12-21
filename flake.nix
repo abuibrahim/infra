@@ -54,7 +54,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neve.url = "github:redyf/neve";
+    nixvim-config = {
+      url = "github:abuibrahim/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
