@@ -1,7 +1,9 @@
 {
   flake.modules.nixos.base =
-    { hostConfig, ... }:
+    { hostName, ... }:
     {
-      networking.hostName = hostConfig.name;
+      networking = {
+        inherit hostName;
+      };
     };
 }

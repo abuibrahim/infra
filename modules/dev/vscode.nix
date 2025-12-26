@@ -6,7 +6,7 @@
     };
 
     homeManager.dev =
-      { pkgs, hostConfig, ... }:
+      { pkgs, hostName, ... }:
       {
         nixpkgs.config.allowUnfree = true;
 
@@ -36,9 +36,9 @@
               "nix.serverSettings.nixd.formatting.command" = [ "nixfmt" ];
               "nix.serverSettings.nixd.nixpkgs.expr" = "(builtins.getFlake (toString ./.)).inputs.nixpkgs";
               "nix.serverSettings.nixd.options.nixos.expr" =
-                "(builtins.getFlake (toString ./.)).nixosConfigurations.${hostConfig.name}.options";
+                "(builtins.getFlake (toString ./.)).nixosConfigurations.${hostName}.options";
               "nix.serverSettings.nixd.options.home-manager.expr" =
-                "(builtins.getFlake (toString ./.)).nixosConfigurations.${hostConfig.name}.options.home-manager.users.type.getSubOptions []";
+                "(builtins.getFlake (toString ./.)).nixosConfigurations.${hostName}.options.home-manager.users.type.getSubOptions []";
             };
 
             extensions =
