@@ -11,12 +11,9 @@
             resumeCommand = ""; # No action on resume
           }
         ];
-        events = [
-          {
-            event = "before-sleep";
-            command = "${pkgs.swaylock-effects}/bin/swaylock -f";
-          }
-        ];
+        events = {
+          before-sleep = "${pkgs.swaylock-effects}/bin/swaylock -f";
+        };
       };
 
       systemd.user.services.swayidle.Unit.ConditionEnvironment = lib.mkForce [
