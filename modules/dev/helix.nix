@@ -20,7 +20,7 @@
             {
               name = "nix";
               auto-format = true;
-              formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+              formatter.command = "${lib.getExe pkgs.nixfmt}";
             }
             {
               name = "c";
@@ -35,13 +35,13 @@
             {
               name = "rust";
               auto-format = true;
-              formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
+              formatter.command = "${lib.getExe pkgs.rustfmt}";
             }
             {
               name = "haskell";
               auto-format = true;
               formatter = {
-                command = "${pkgs.ormolu}/bin/ormolu";
+                command = "${lib.getExe pkgs.ormolu}";
                 args = [
                   "--stdin-input-file"
                   "%{buffer_name}"
@@ -51,7 +51,7 @@
             {
               name = "cabal";
               auto-format = true;
-              formatter.command = "${pkgs.haskellPackages.cabal-gild}/bin/cabal-gild";
+              formatter.command = "${lib.getExe pkgs.haskellPackages.cabal-gild}";
             }
           ];
           themes = {

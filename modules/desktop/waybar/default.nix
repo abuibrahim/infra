@@ -33,7 +33,7 @@
             "cpu" = {
               interval = 5;
               format = "";
-              on-click = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.bottom}/bin/btm";
+              on-click = "${lib.getExe pkgs.ghostty} -e ${lib.getExe pkgs.bottom}";
             };
 
             "clock" = {
@@ -60,7 +60,7 @@
               tooltip-format-disconnected = "Disconnected";
               interval = 3;
               spacing = 1;
-              on-click = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.impala}/bin/impala";
+              on-click = "${lib.getExe pkgs.ghostty} -e ${pkgs.impala}/bin/impala";
             };
 
             "battery" = {
@@ -110,7 +110,7 @@
               format-disabled = "󰂲";
               format-connected = "󰂱";
               tooltip-format = "Devices connected: {num_connections}";
-              on-click = "${pkgs.blueberry}/bin/blueberry";
+              on-click = "${lib.getExe pkgs.ghostty} -e ${lib.getExe pkgs.bluetui}";
             };
 
             "group/pulseaudio" = {
@@ -137,8 +137,8 @@
               };
               tooltip-format = "Playing at {volume}%";
               scroll-step = 5;
-              on-click = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.wiremix}/bin/wiremix";
-              on-click-right = "${pkgs.pamixer}/bin/pamixer -t";
+              on-click = "${lib.getExe pkgs.ghostty} -e ${lib.getExe pkgs.wiremix}";
+              on-click-right = "${lib.getExe pkgs.pamixer} -t";
             };
 
             "pulseaudio/slider" = {

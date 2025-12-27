@@ -7,12 +7,12 @@
         timeouts = [
           {
             timeout = 300; # 5 minutes
-            command = "${pkgs.swaylock-effects}/bin/swaylock -f";
+            command = "${lib.getExe pkgs.swaylock-effects} -f";
             resumeCommand = ""; # No action on resume
           }
         ];
         events = {
-          before-sleep = "${pkgs.swaylock-effects}/bin/swaylock -f";
+          before-sleep = "${lib.getExe pkgs.swaylock-effects} -f";
         };
       };
 
