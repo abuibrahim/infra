@@ -6,7 +6,7 @@
         mosh
         procs
         nixd
-        nixfmt-rfc-style
+        nixfmt
       ];
     };
 }
