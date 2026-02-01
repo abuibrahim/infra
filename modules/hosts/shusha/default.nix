@@ -13,6 +13,7 @@
         home-manager.users.abdurrahman.imports = with config.flake.modules.homeManager; [
           base
           dev
+          email
           fonts
           shell
         ];
