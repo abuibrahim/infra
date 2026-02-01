@@ -7,7 +7,11 @@
         address = "abdurrahman@hussain.house";
         userName = "ruslan.hussain@icloud.com";
         realName = "Abdurrahman Hussain";
-        passwordCommand = "security find-generic-password -s mbsync-icloud -a ${address} -w";
+        passwordCommand =
+          if pkgs.stdenv.isDarwin then
+            "security find-generic-password -s mbsync-icloud -a ${address} -w"
+          else
+            "${pkgs.libsecret}/bin/secret-tool lookup email ${address}";
         imap = {
           host = "imap.mail.me.com";
           port = 993;
