@@ -23,6 +23,10 @@ layer-rule {
   match namespace="^quickshell$"
   place-within-backdrop true
 }
+window-rule {
+  match app-id="^org.quickshell$"
+  open-floating true
+}
 prefer-no-csd
 hotkey-overlay {
   skip-at-startup
