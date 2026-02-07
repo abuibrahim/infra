@@ -19,6 +19,10 @@ input {
   }
   focus-follows-mouse
 }
+layer-rule {
+  match namespace="^quickshell$"
+  place-within-backdrop true
+}
 prefer-no-csd
 hotkey-overlay {
   skip-at-startup
