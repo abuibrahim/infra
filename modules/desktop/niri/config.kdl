@@ -24,6 +24,10 @@ layer-rule {
   place-within-backdrop true
 }
 window-rule {
+  match is-active=false
+  opacity 0.9
+}
+window-rule {
   match app-id="^org.quickshell$"
   open-floating true
 }
