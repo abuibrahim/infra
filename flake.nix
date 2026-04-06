@@ -61,6 +61,7 @@
 
     globalprotect-openconnect = {
       url = "github:yuezk/GlobalProtect-openconnect";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
