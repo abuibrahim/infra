@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.dev = {
-    programs.claude-code.enable = true;
+    programs.claude-code.enable = false;
     nixpkgs.config.allowUnfree = true;
   };
 }
