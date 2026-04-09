@@ -1,18 +1,21 @@
 {
-  flake.modules.nixos."host/t25" = {
-    hardware.graphics.enable = true;
-    hardware.nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-      prime = {
-        intelBusId = "PCI:0:2:0";
-        nvidiaBusId = "PCI:2:0:0";
+  flake.modules.nixos."host/t25" =
+    { config, ... }:
+    {
+      hardware.graphics.enable = true;
+      hardware.nvidia = {
+        modesetting.enable = true;
+        powerManagement.enable = false;
+        powerManagement.finegrained = false;
+        open = false;
+        nvidiaSettings = true;
+        package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+        prime = {
+          intelBusId = "PCI:0:2:0";
+          nvidiaBusId = "PCI:2:0:0";
+        };
       };
-    };
 
-    services.xserver.videoDrivers = [ "nvidia" ];
-  };
+      services.xserver.videoDrivers = [ "nvidia" ];
+    };
 }
