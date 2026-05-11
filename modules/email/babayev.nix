@@ -28,10 +28,12 @@
             {
               check-mail = "5m";
               check-mail-cmd = "gmi sync -C ${gmiPath} && notmuch new";
+              copy-to = "";
               outgoing = "gmi send C ${gmiPath} -t";
               query-map = "${query-map}";
               source = "notmuch://${maildirBasePath}";
               sent = "Sent";
+              folders-exclude = "mail";
             };
         };
       };
