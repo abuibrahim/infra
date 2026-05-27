@@ -6,6 +6,8 @@
     programs.nixvim = {
       imports = [ inputs.nixvim-config.nixvimModule ];
 
+      nixpkgs.source = inputs.nixpkgs;
+
       enable = true;
       defaultEditor = true;
       vimAlias = true;
