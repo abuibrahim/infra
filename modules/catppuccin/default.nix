@@ -1,6 +1,7 @@
 { inputs, ... }:
 let
   catppuccin = {
+    autoEnable = true;
     enable = true;
     flavor = "mocha";
     accent = "lavender";
