@@ -19,8 +19,8 @@
             src = pkgs.fetchFromGitHub {
               owner = "muadzmo";
               repo = "prayertimes";
-              rev = "8c53ea678170889b48368b1f79eb68fb6f0aa111";
-              sha256 = "sha256-i8uSJytzGPcD/CzustEQHFVaD4FuHRxEKDq+aIixLcI=";
+              rev = "82b16b235d3f06101d79f04529a1a32b4d32fe2c";
+              sha256 = "sha256-BfA1uN/xqw7uhmE+/caTfbP23rzsA2kq2yx9P26Cgkg=";
             };
           };
         };
