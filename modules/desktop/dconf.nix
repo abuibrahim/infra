@@ -6,7 +6,7 @@
   flake.modules.homeManager.desktop = {
     dconf.settings = {
       "org/gnome/desktop/interface" = {
-        monospace-font-name = "JetBrainsMono NF 12";
+        monospace-font-name = "JetBrainsMono NF 10";
       };
       "org/gnome/desktop/default-applications/terminal" = {
         exec = "ghostty";
