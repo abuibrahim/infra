@@ -25,7 +25,16 @@ layer-rule {
 }
 window-rule {
   match is-active=false
-  opacity 0.9
+  opacity 0.85
+  background-effect {
+    blur true
+  }
+}
+window-rule {
+  match app-id="^com.mitchellh.ghostty$"
+  background-effect {
+    blur true
+  }
 }
 window-rule {
   match app-id="^org.quickshell$"
