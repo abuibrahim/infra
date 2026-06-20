@@ -1,20 +1,14 @@
-{ inputs, ... }:
 {
   flake.modules.nixos."host/t25" =
-    { pkgs, lib, ... }:
+    { pkgs, ... }:
     {
-      imports = [ inputs.lanzaboote.nixosModules.lanzaboote ];
       boot = {
         loader = {
           efi.canTouchEfiVariables = true;
-          # Make lanzaboote install systemd-boot
-          systemd-boot.enable = lib.mkForce false;
-          timeout = 0;
-        };
-
-        lanzaboote = {
-          enable = true;
-          pkiBundle = "/var/lib/sbctl";
+          limine = {
+            enable = true;
+            secureBoot.enable = true;
+          };
         };
 
         initrd = {
