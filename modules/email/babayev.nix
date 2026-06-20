@@ -16,11 +16,12 @@
               maildirBasePath = "${config.accounts.email.maildirBasePath}";
               gmiPath = "${maildirBasePath}/Babayev";
               query-map = pkgs.writeText "query-map" ''
-                Inbox=tag:inbox and not tag:archived
-                Unread=tag:unread
-                Drafts=tag:draft
-                Sent=tag:sent
-                Starred=tag:flagged
+                Inbox=tag:inbox and not tag:trash and not tag:spam
+                Archive=not tag:inbox and not tag:trash and not tag:spam
+                Unread=tag:unread and not tag:trash and not tag:spam
+                Drafts=tag:draft and not tag:trash and not tag:spam
+                Sent=tag:sent and not tag:trash and not tag:spam
+                Flagged=tag:flagged and not tag:trash and not tag:spam
                 Trash=tag:trash
                 Spam=tag:spam
               '';
@@ -32,7 +33,6 @@
               outgoing = "gmi send C ${gmiPath} -t";
               query-map = "${query-map}";
               source = "notmuch://${maildirBasePath}";
-              sent = "Sent";
               folders-exclude = "mail";
             };
         };
