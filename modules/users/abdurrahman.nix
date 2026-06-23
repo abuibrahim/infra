@@ -12,7 +12,7 @@
     modules.nixos.abdurrahman =
       { pkgs, ... }:
       {
-        programs.fish.enable = true;
+        programs.zsh.enable = true;
 
         users.users.abdurrahman = {
           description = config.flake.meta.users.abdurrahman.name;
@@ -26,7 +26,7 @@
             "tty"
             "wheel"
           ];
-          shell = pkgs.fish;
+          shell = pkgs.zsh;
           initialPassword = "id";
         };
 
@@ -36,7 +36,7 @@
     modules.darwin.abdurrahman =
       { pkgs, ... }:
       {
-        programs.fish.enable = true;
+        programs.zsh.enable = true;
 
         users.knownUsers = [
           "abdurrahman"
@@ -45,7 +45,7 @@
           uid = 501;
           name = "abdurrahman";
           home = "/Users/abdurrahman";
-          shell = pkgs.fish;
+          shell = pkgs.zsh;
         };
       };
   };
