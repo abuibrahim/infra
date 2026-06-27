@@ -7,6 +7,7 @@
         background-opacity = 0.85;
         background-blur = true;
         link-url = true;
+        shell-integration-features = "ssh-terminfo,ssh-env";
       };
     };
   };
