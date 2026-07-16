@@ -10,7 +10,6 @@
       base
       bluetooth
       desktop
-      facter
       fwupd
       shell
 
@@ -25,7 +24,6 @@
           desktop
           dev
           email
-          facter
           fonts
           shell
         ];

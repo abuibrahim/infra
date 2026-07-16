@@ -21,8 +21,6 @@
 
     import-tree.url = "github:vic/import-tree";
 
-    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
-
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
     systems.url = "github:nix-systems/default";

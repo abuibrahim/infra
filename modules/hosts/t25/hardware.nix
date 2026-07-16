@@ -2,6 +2,12 @@
   flake.modules.nixos."host/t25" =
     { config, ... }:
     {
+      hardware.facter = {
+        enable = true;
+        reportPath = ./facter.json;
+        detected.dhcp.enable = false;
+      };
+
       hardware.graphics.enable = true;
       hardware.nvidia = {
         modesetting.enable = true;
