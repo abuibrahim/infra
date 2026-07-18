@@ -21,7 +21,7 @@
           extraGroups = [
             "audio"
             "input"
-            "networkManager"
+            "networkmanager"
             "sound"
             "tty"
             "wheel"
