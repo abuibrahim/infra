@@ -1,6 +1,6 @@
 topLevel: {
   flake.modules.homeManager.dev =
-    { config, pkgs, ... }:
+    { config, ... }:
     {
       programs.git = {
         enable = true;
@@ -10,11 +10,6 @@ topLevel: {
           init.defaultBranch = "main";
           pull.ff = "only";
           push.default = "current";
-          credential = builtins.listToAttrs (
-            map (
-              host: pkgs.lib.nameValuePair host { username = "abuibrahim"; }
-            ) config.programs.gh.gitCredentialHelper.hosts
-          );
         };
       };
     };
