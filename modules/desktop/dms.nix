@@ -9,6 +9,8 @@
         enable = true;
         compositor.name = "niri";
       };
+      services.upower.enable = true;
+      services.geoclue2.enable = true;
       environment.systemPackages = with pkgs; [
         libnotify
       ];
