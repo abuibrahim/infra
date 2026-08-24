@@ -8,6 +8,7 @@
         background-blur = true;
         link-url = true;
         shell-integration-features = "ssh-terminfo,ssh-env";
+        adjust-box-thickness = 2;
       };
     };
   };
