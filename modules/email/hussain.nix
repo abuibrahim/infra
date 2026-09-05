@@ -8,7 +8,7 @@
         userName = "ruslan.hussain@icloud.com";
         realName = "Abdurrahman Hussain";
         passwordCommand =
-          if pkgs.stdenv.isDarwin then
+          if pkgs.stdenv.hostPlatform.isDarwin then
             "security find-generic-password -s mbsync-icloud -a ${address} -w"
           else
             "${pkgs.libsecret}/bin/secret-tool lookup email ${address}";
