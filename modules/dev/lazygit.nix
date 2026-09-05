@@ -5,10 +5,10 @@
       settings = {
         git = {
           skipDiscardChangeWarning = true;
-          pagers = [
+          diffRenderers = [
             {
               colorArg = "always";
-              pager = "${lib.getExe config.programs.delta.package} --dark --paging=never";
+              command = "${lib.getExe config.programs.delta.package} --dark --paging=never";
             }
           ];
         };
