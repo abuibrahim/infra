@@ -32,7 +32,7 @@
               copy-to = "";
               outgoing = "gmi send -C ${gmiPath} -t";
               query-map = "${query-map}";
-              source = "notmuch://${maildirBasePath}";
+              source = "notmuch://";
               folders-exclude = "mail";
             };
         };

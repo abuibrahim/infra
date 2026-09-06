@@ -77,7 +77,7 @@
               maildir-store = "${maildirBasePath}";
               maildir-account-path = "Hussain";
               query-map = "${query-map}";
-              source = "notmuch://${maildirBasePath}";
+              source = "notmuch://";
               sent = "Sent";
             };
         };
