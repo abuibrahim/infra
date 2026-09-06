@@ -3,7 +3,8 @@
     programs.ghostty = {
       enable = true;
       settings = {
-        copy-on-select = true;
+        copy-on-select = "clipboard";
+        clipboard-read = "allow";
         background-opacity = 0.85;
         background-blur = true;
         link-url = true;
