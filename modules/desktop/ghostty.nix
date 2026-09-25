@@ -10,9 +10,11 @@
         link-url = true;
         shell-integration-features = "ssh-terminfo,ssh-env";
         adjust-box-thickness = 2;
-        window-padding-x = 5;
-        window-padding-y = 0;
+        adjust-cursor-thickness = 2;
+        window-padding-x = 14;
+        window-padding-y = 14;
         window-padding-balance = true;
+        window-padding-color = "extend";
       };
     };
   };
