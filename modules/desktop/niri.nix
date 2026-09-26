@@ -10,21 +10,6 @@
         enable = true;
         checkConfig = false;
         settings = {
-          input = {
-            keyboard = {
-              xkb = {
-                layout = "us,us";
-                variant = ",dvorak";
-                options = "grp:alt_shift_toggle,caps:escape";
-              };
-              numlock = { };
-            };
-            touchpad = {
-              tap = { };
-              natural-scroll = { };
-            };
-            focus-follows-mouse = { };
-          };
           prefer-no-csd = { };
           hotkey-overlay.skip-at-startup = { };
           binds = {
@@ -123,7 +108,6 @@
                 "brightness"
                 "decrement"
                 "5"
-                ""
               ];
             };
             "XF86MonBrightnessUp" = {
@@ -135,7 +119,6 @@
                 "brightness"
                 "increment"
                 "5"
-                ""
               ];
             };
             "Mod+Comma" = {
@@ -351,6 +334,7 @@
           include "dms/binds.kdl"
           include "dms/colors.kdl"
           include "dms/cursor.kdl"
+          include "dms/input.kdl"
           include "dms/layout.kdl"
           include "dms/outputs.kdl"
           include "dms/windowrules.kdl"
