@@ -13,7 +13,6 @@
         modesetting.enable = true;
         powerManagement.enable = false;
         powerManagement.finegrained = false;
-        open = false;
         nvidiaSettings = true;
         package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
         prime = {
