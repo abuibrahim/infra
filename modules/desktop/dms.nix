@@ -13,6 +13,7 @@
         };
         services.upower.enable = true;
         services.geoclue2.enable = true;
+        services.power-profiles-daemon.enable = true;
         environment.systemPackages = with pkgs; [
           libnotify
         ];
