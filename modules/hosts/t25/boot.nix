@@ -23,6 +23,7 @@
           ];
         };
 
+        kernelPackages = pkgs.linuxPackages_latest;
         plymouth.enable = true;
         kernelParams = [ "quiet" ];
         kernelModules = [ "kvm-intel" ];
