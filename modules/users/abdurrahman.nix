@@ -27,10 +27,9 @@
             "wheel"
           ];
           shell = pkgs.zsh;
-          initialPassword = "id";
+          hashedPassword = "$6$I/aTj7WOOdgcpRZP$PHzM8GGM7IC6p2657sO0iOuKJkvnpBxZaBis4mh6j23QkITZAN7UrGRz20yg7E2mqAv1W50p3zDHqIbM4qHu80";
         };
 
-        nix.settings.trusted-users = [ config.flake.meta.users.abdurrahman.username ];
       };
 
     modules.darwin.abdurrahman =
