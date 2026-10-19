@@ -123,6 +123,18 @@
   "messages:folder=Drafts" = {
     "<Enter>" = ":recall<Enter>";
   };
+  # IMAP (mbsync) account: archive/delete move files between folders, which
+  # mbsync propagates to the server; the label bindings above are for Gmail.
+  "messages:account=Hussain" = {
+    A = ":unmark -a<Enter>:mark -T<Enter>:archive flat<Enter>";
+    D = ":move Deleted<Enter>";
+    a = ":archive flat<Enter>";
+    d = ":choose -o y 'Really delete this message' 'move Deleted'<Enter>";
+  };
+  "view:account=Hussain" = {
+    A = ":archive flat<Enter>";
+    D = ":move Deleted<Enter>";
+  };
   terminal = {
     "$ex" = "<C-x>";
     "$noinherit" = "true";
