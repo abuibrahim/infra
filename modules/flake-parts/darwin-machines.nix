@@ -26,7 +26,11 @@ in
             module
             inputs.home-manager.darwinModules.home-manager
             {
-              home-manager.extraSpecialArgs = specialArgs;
+              home-manager = {
+                extraSpecialArgs = specialArgs;
+                useGlobalPkgs = true;
+                useUserPackages = true;
+              };
             }
           ];
         };

@@ -5,6 +5,7 @@
     nix.enable = false;
 
     nixpkgs.hostPlatform = "aarch64-darwin";
+    nixpkgs.config.allowUnfree = true;
 
     # Enable sudo login with Touch ID
     security.pam.services.sudo_local.touchIdAuth = true;

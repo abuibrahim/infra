@@ -22,7 +22,7 @@
             "*.el"
             "*.envrc"
             ".editorconfig"
-            "*/.gitignore"
+            ".gitignore"
           ];
         };
       };

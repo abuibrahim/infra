@@ -13,20 +13,13 @@
 
         initrd = {
           systemd.enable = true;
-          availableKernelModules = [
-            "xhci_pci"
-            "nvme"
-            "usbhid"
-            "usb_storage"
-            "uas"
-            "sd_mod"
-          ];
+          # The rest come from nixos-facter
+          availableKernelModules = [ "uas" ];
         };
 
         kernelPackages = pkgs.linuxPackages_latest;
         plymouth.enable = true;
         kernelParams = [ "quiet" ];
-        kernelModules = [ "kvm-intel" ];
       };
 
       environment.systemPackages = [ pkgs.sbctl ];
