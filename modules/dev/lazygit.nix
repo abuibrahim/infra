@@ -1,17 +1,11 @@
 {
-  flake.modules.homeManager.dev = { config, lib, ... }: {
+  flake.modules.homeManager.dev = {
     programs.lazygit = {
       enable = true;
       settings = {
         promptToReturnFromSubprocess = false;
         git = {
           skipDiscardChangeWarning = true;
-          diffRenderers = [
-            {
-              colorArg = "always";
-              command = "${lib.getExe config.programs.delta.package} --dark --paging=never";
-            }
-          ];
         };
       };
     };
