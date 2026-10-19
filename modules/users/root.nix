@@ -4,7 +4,9 @@
     {
       users.users.root = {
         shell = pkgs.zsh;
-        initialPassword = "id";
+        # Locked: use sudo from a wheel user. With mutableUsers this only
+        # applies to new installs; on existing hosts run `passwd -l root`.
+        hashedPassword = "!";
       };
     };
 }

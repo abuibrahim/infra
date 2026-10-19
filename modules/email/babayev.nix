@@ -6,14 +6,14 @@
         flavor = "gmail.com";
         realName = "Ruslan Babayev";
         address = "ruslan@babayev.com";
-        userName = "${address}";
+        userName = address;
         lieer.enable = true;
         notmuch.enable = true;
         aerc = {
           enable = true;
           extraAccounts =
             let
-              maildirBasePath = "${config.accounts.email.maildirBasePath}";
+              inherit (config.accounts.email) maildirBasePath;
               gmiPath = "${maildirBasePath}/Babayev";
               # All accounts share one notmuch database; keep queries to
               # this account's mail.

@@ -7,6 +7,7 @@
     with config.flake.modules.darwin;
     [
       abdurrahman
+      shell
     ]
     ++ [
       {
