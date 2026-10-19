@@ -15,15 +15,17 @@
             let
               maildirBasePath = "${config.accounts.email.maildirBasePath}";
               gmiPath = "${maildirBasePath}/Babayev";
+              # All accounts share one notmuch database; keep queries to
+              # this account's mail.
               query-map = pkgs.writeText "query-map" ''
-                Inbox=tag:inbox and not tag:trash and not tag:spam
-                Archive=not tag:inbox and not tag:trash and not tag:spam
-                Unread=tag:unread and not tag:trash and not tag:spam
-                Drafts=tag:draft and not tag:trash and not tag:spam
-                Sent=tag:sent and not tag:trash and not tag:spam
-                Flagged=tag:flagged and not tag:trash and not tag:spam
-                Trash=tag:trash
-                Spam=tag:spam
+                Inbox=path:Babayev/** and tag:inbox and not tag:trash and not tag:spam
+                Archive=path:Babayev/** and not tag:inbox and not tag:trash and not tag:spam
+                Unread=path:Babayev/** and tag:unread and not tag:trash and not tag:spam
+                Drafts=path:Babayev/** and tag:draft and not tag:trash and not tag:spam
+                Sent=path:Babayev/** and tag:sent and not tag:trash and not tag:spam
+                Flagged=path:Babayev/** and tag:flagged and not tag:trash and not tag:spam
+                Trash=path:Babayev/** and tag:trash
+                Spam=path:Babayev/** and tag:spam
               '';
             in
             {
@@ -33,21 +35,13 @@
               outgoing = "gmi send -C ${gmiPath} -t";
               query-map = "${query-map}";
               source = "notmuch://";
-              folders-exclude = "mail";
+              # Gmail is label-based: lieer syncs tags, so don't expose (or
+              # move files between) the maildir folders under the mail root.
+              enable-maildir = false;
             };
         };
       };
 
-      programs = {
-        notmuch = {
-          enable = true;
-          new.tags = [ ];
-          search.excludeTags = [
-            "trash"
-            "spam"
-          ];
-        };
-        lieer.enable = true;
-      };
+      programs.lieer.enable = true;
     };
 }
