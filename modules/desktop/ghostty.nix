@@ -5,7 +5,7 @@
       settings = {
         copy-on-select = "clipboard";
         clipboard-read = "allow";
-        background-opacity = 0.85;
+        background-opacity = 0.95;
         background-blur = true;
         link-url = true;
         shell-integration-features = "ssh-terminfo,ssh-env";
