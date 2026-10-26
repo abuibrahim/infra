@@ -12,7 +12,6 @@
         };
 
         initrd = {
-          systemd.enable = true;
           # The rest come from nixos-facter
           availableKernelModules = [ "uas" ];
         };
