@@ -51,7 +51,7 @@
         ];
         settings = {
           # Built-in, ANSI-only theme: follows the terminal's palette and background
-          theme = "base16_default";
+          theme = "base16_terminal";
           editor = {
             lsp.display-inlay-hints = true;
             color-modes = true;
