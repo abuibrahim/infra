@@ -162,11 +162,11 @@
         "zig-overlay": "zig-overlay"
       },
       "locked": {
-        "lastModified": 1794968669,
-        "narHash": "sha256-X75Qr0eiFeusQH2f8XuQqY54LzmmbJdilgalMvAA360=",
+        "lastModified": 1794987079,
+        "narHash": "sha256-qsG6674kzqN6bY9hcTgf0k7HYsWhQv3bXAZ/ZkIWn4o=",
         "owner": "abuibrahim",
         "repo": "neorex",
-        "rev": "63bfa42dc96da0ddf7dbef8c6bbb85ca9d7e11f7",
+        "rev": "bfa0b7ec67cfaf234b960f347679f949475d59b6",
         "type": "github"
       },
       "original": {
