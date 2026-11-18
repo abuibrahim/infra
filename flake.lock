@@ -154,6 +154,28 @@
         "type": "github"
       }
     },
+    "neorex": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "zig-overlay": "zig-overlay"
+      },
+      "locked": {
+        "lastModified": 1794968669,
+        "narHash": "sha256-X75Qr0eiFeusQH2f8XuQqY54LzmmbJdilgalMvAA360=",
+        "owner": "abuibrahim",
+        "repo": "neorex",
+        "rev": "63bfa42dc96da0ddf7dbef8c6bbb85ca9d7e11f7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "abuibrahim",
+        "ref": "integration",
+        "repo": "neorex",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -248,6 +270,7 @@
         "home-manager": "home-manager",
         "import-tree": "import-tree",
         "make-shell": "make-shell",
+        "neorex": "neorex",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
@@ -288,6 +311,34 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "zig-overlay": {
+      "inputs": {
+        "flake-compat": [
+          "git-hooks",
+          "flake-compat"
+        ],
+        "nixpkgs": [
+          "neorex",
+          "nixpkgs"
+        ],
+        "systems": [
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793967411,
+        "narHash": "sha256-K9rCPtfNMuTyPF63MIL9f5EQtTI3m+cks1JnPDaCQAs=",
+        "owner": "mitchellh",
+        "repo": "zig-overlay",
+        "rev": "0400891e93f4bdb654f051c915d9099b3a28e3c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mitchellh",
+        "repo": "zig-overlay",
         "type": "github"
       }
     }

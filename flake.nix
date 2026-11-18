@@ -57,6 +57,13 @@
       inputs.flake-utils.inputs.systems.follows = "systems";
     };
 
+    neorex = {
+      url = "github:abuibrahim/neorex/integration";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.zig-overlay.inputs.systems.follows = "systems";
+      inputs.zig-overlay.inputs.flake-compat.follows = "git-hooks/flake-compat";
+    };
+
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
