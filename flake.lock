@@ -162,11 +162,11 @@
         "zig-overlay": "zig-overlay"
       },
       "locked": {
-        "lastModified": 1794987079,
-        "narHash": "sha256-qsG6674kzqN6bY9hcTgf0k7HYsWhQv3bXAZ/ZkIWn4o=",
+        "lastModified": 1795049153,
+        "narHash": "sha256-0QFjjdZwggf/wnGGAqSUBXP/eyyjVb1RGB3iXNvi6Pw=",
         "owner": "abuibrahim",
         "repo": "neorex",
-        "rev": "bfa0b7ec67cfaf234b960f347679f949475d59b6",
+        "rev": "1bfa7d417bc21e4c82b140e5927c3abe10ce8f13",
         "type": "github"
       },
       "original": {
@@ -249,11 +249,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794981691,
-        "narHash": "sha256-WWxT/r9HQXTeIwlq0F8z6g3X0xzWki691A+vigwD8Ek=",
+        "lastModified": 1795073273,
+        "narHash": "sha256-l+dSg+oIM91wAgt48KbFbCH5y9spA3fYpZPvM39kkzk=",
         "owner": "abuibrahim",
         "repo": "nixvim",
-        "rev": "a17421072a983531e714280e445e58a683941c29",
+        "rev": "e15183b6609cc746e37cfa00417edef177e68564",
         "type": "github"
       },
       "original": {

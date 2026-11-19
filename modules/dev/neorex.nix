@@ -22,5 +22,9 @@
         neorex
         (lib.hiPrio nvim)
       ];
+
+      xdg.configFile."rex/init.lua".text = ''
+        pcall(dofile, os.getenv("HOME") .. "/.local/state/neorex/rex.lua")
+      '';
     };
 }
